@@ -4,6 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { PostHogProvider } from '@/components/analytics/PostHogProvider';
 import { DemoBadge } from '@/components/DemoBadge';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
 
@@ -53,7 +54,14 @@ export default async function RootLayout(props: {
       <body>
         <NextIntlClientProvider>
           <PostHogProvider>
-            {props.children}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {props.children}
+            </ThemeProvider>
           </PostHogProvider>
           <DemoBadge />
         </NextIntlClientProvider>
