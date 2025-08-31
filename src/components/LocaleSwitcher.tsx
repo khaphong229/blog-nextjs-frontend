@@ -3,6 +3,7 @@
 import type { ChangeEventHandler } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { usePathname } from '@/libs/I18nNavigation';
 import { routing } from '@/libs/I18nRouting';
 
@@ -17,17 +18,21 @@ export const LocaleSwitcher = () => {
   };
 
   return (
-    <select
+    <Select
       defaultValue={locale}
-      onChange={handleChange}
-      className="border border-gray-300 font-medium focus:outline-hidden focus-visible:ring-3"
+      onValueChange={handleChange}
       aria-label="lang-switcher"
     >
-      {routing.locales.map(elt => (
-        <option key={elt} value={elt}>
-          {elt.toUpperCase()}
-        </option>
-      ))}
-    </select>
+      <SelectTrigger>
+        <SelectValue placeholder="Language" />
+      </SelectTrigger>
+      <SelectContent>
+        {routing.locales.map(elt => (
+          <SelectItem key={elt} value={elt}>
+            {elt.toUpperCase()}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 };

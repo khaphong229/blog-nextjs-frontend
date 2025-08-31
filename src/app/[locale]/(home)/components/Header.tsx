@@ -1,14 +1,9 @@
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
+import { LocaleSwitcher } from '@/components/LocaleSwitcher';
 import ModeToggle from '@/components/ModeToggle';
 import { Button } from '@/components/ui/button';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 type HeaderItem = {
@@ -62,15 +57,7 @@ export default function Header() {
           </div>
           <div className="inline-flex flex-1 justify-end gap-2">
             <div className="hidden lg:block">
-              <Select defaultValue="en">
-                <SelectTrigger>
-                  <SelectValue placeholder="Language" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="en">EN</SelectItem>
-                  <SelectItem value="vi">VI</SelectItem>
-                </SelectContent>
-              </Select>
+              <LocaleSwitcher />
             </div>
             <ModeToggle />
           </div>
