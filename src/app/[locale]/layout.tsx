@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { PostHogProvider } from '@/components/analytics/PostHogProvider';
 import { DemoBadge } from '@/components/DemoBadge';
@@ -33,6 +34,11 @@ export const metadata: Metadata = {
   ],
 };
 
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
@@ -50,7 +56,7 @@ export default async function RootLayout(props: {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={inter.className}>
       <body>
         <NextIntlClientProvider>
           <PostHogProvider>

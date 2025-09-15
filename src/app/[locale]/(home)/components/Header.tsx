@@ -46,7 +46,7 @@ export default function Header() {
 
           {/* Desktop */}
           <Link href="/" className="inline-flex flex-1 items-center gap-2">
-            <span className="color-primary-text text-2xl font-bold tracking-tight">khaphong.dev</span>
+            <span className="color-primary-text text-2xl font-bold tracking-tight">khaphong.io.vn</span>
           </Link>
           <div className="hidden gap-2 lg:inline-flex">
             {navItems.map((item: HeaderItem) => (
@@ -72,7 +72,7 @@ export default function Header() {
             <SheetContent side="right" className="flex w-[90%] max-w-sm flex-col px-6 py-6">
               <SheetTitle>
                 <Link href="#" className="inline-flex items-center gap-2">
-                  <span className="color-primary-text text-2xl font-bold tracking-tight">khaphong.dev</span>
+                  <span className="color-primary-text text-2xl font-bold tracking-tight">khaphong.io.vn</span>
                 </Link>
               </SheetTitle>
               <nav className="-mx-4 my-6 flex flex-1 flex-col gap-2">

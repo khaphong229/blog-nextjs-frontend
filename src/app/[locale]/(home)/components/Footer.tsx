@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="sm:col-span-3 lg:col-span-2">
             <div className="max-w-xs">
               <Link href="/" className="flex items-center gap-2">
-                <span className="text-[21px] font-bold color-primary-text">khaphong.dev</span>
+                <span className="text-[21px] font-bold color-primary-text">khaphong.io.vn</span>
               </Link>
               <p className="text-muted-foreground mt-6 text-sm/6">
                 Blookie helps you build beautiful websites faster with ready-to-use components and templates.
