@@ -2,16 +2,17 @@
 	Installed from https://reactbits.dev/ts/default/
 */
 
-import React, { useRef, useEffect, ReactNode } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import type { ReactNode } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface AnimatedContentProps {
+type AnimatedContentProps = {
   children: ReactNode;
   distance?: number;
-  direction?: "vertical" | "horizontal";
+  direction?: 'vertical' | 'horizontal';
   reverse?: boolean;
   duration?: number;
   ease?: string | ((progress: number) => number);
@@ -21,15 +22,15 @@ interface AnimatedContentProps {
   threshold?: number;
   delay?: number;
   onComplete?: () => void;
-}
+};
 
 const AnimatedContent: React.FC<AnimatedContentProps> = ({
   children,
   distance = 100,
-  direction = "vertical",
+  direction = 'vertical',
   reverse = false,
   duration = 0.8,
-  ease = "power3.out",
+  ease = 'power3.out',
   initialOpacity = 0,
   animateOpacity = true,
   scale = 1,
@@ -41,9 +42,11 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      return;
+    }
 
-    const axis = direction === "horizontal" ? "x" : "y";
+    const axis = direction === 'horizontal' ? 'x' : 'y';
     const offset = reverse ? -distance : distance;
     const startPct = (1 - threshold) * 100;
 
@@ -64,13 +67,13 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       scrollTrigger: {
         trigger: el,
         start: `top ${startPct}%`,
-        toggleActions: "play none none none",
+        toggleActions: 'play none none none',
         once: true,
       },
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.getAll().forEach(t => t.kill());
       gsap.killTweensOf(el);
     };
   }, [

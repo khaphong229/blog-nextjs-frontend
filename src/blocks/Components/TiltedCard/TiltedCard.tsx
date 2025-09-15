@@ -2,25 +2,25 @@
 	Installed from https://reactbits.dev/ts/tailwind/
 */
 
-import type { SpringOptions } from "motion/react";
-import { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import type { SpringOptions } from 'motion/react';
+import { motion, useMotionValue, useSpring } from 'motion/react';
+import { useRef, useState } from 'react';
 
-interface TiltedCardProps {
-  imageSrc: React.ComponentProps<"img">["src"];
+type TiltedCardProps = {
+  imageSrc: React.ComponentProps<'img'>['src'];
   altText?: string;
   captionText?: string;
-  containerHeight?: React.CSSProperties["height"];
-  containerWidth?: React.CSSProperties["width"];
-  imageHeight?: React.CSSProperties["height"];
-  imageWidth?: React.CSSProperties["width"];
+  containerHeight?: React.CSSProperties['height'];
+  containerWidth?: React.CSSProperties['width'];
+  imageHeight?: React.CSSProperties['height'];
+  imageWidth?: React.CSSProperties['width'];
   scaleOnHover?: number;
   rotateAmplitude?: number;
   showMobileWarning?: boolean;
   showTooltip?: boolean;
   overlayContent?: React.ReactNode;
   displayOverlayContent?: boolean;
-}
+};
 
 const springValues: SpringOptions = {
   damping: 30,
@@ -30,12 +30,12 @@ const springValues: SpringOptions = {
 
 export default function TiltedCard({
   imageSrc,
-  altText = "Tilted card image",
-  captionText = "",
-  containerHeight = "300px",
-  containerWidth = "100%",
-  imageHeight = "300px",
-  imageWidth = "300px",
+  altText = 'Tilted card image',
+  captionText = '',
+  containerHeight = '300px',
+  containerWidth = '100%',
+  imageHeight = '300px',
+  imageWidth = '300px',
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,
@@ -59,7 +59,9 @@ export default function TiltedCard({
   const [lastY, setLastY] = useState(0);
 
   function handleMouse(e: React.MouseEvent<HTMLElement>) {
-    if (!ref.current) return;
+    if (!ref.current) {
+      return;
+    }
 
     const rect = ref.current.getBoundingClientRect();
     const offsetX = e.clientX - rect.left - rect.width / 2;
