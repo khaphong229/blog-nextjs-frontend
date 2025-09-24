@@ -56,7 +56,10 @@ export default async function RootLayout(props: {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={inter.className}>
+    <html
+      lang={locale}
+      className={`${inter.className}`}
+    >
       <body>
         <NextIntlClientProvider>
           <PostHogProvider>
@@ -65,6 +68,8 @@ export default async function RootLayout(props: {
               defaultTheme="system"
               enableSystem
               disableTransitionOnChange
+              themes={['light', 'dark']}
+              forcedTheme="dark"
             >
               {props.children}
             </ThemeProvider>
