@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const projects = [
@@ -71,7 +72,6 @@ export default function Projects() {
                 <div className="w-16 h-16 bg-white/20 rounded-lg flex items-center justify-center mb-4 mx-auto backdrop-blur-sm">
                   <span className="text-2xl">📱</span>
                 </div>
-
               </div>
             </div>
 
@@ -79,9 +79,9 @@ export default function Projects() {
             <div className="p-6">
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag, tagIndex) => (
+                {project.tags.map(tag => (
                   <span
-                    key={tagIndex}
+                    key={tag}
                     className="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-400 rounded-full border border-blue-500/30"
                   >
                     {tag}
@@ -140,14 +140,14 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* View All Projects Button */}
+      {/* View All Projects Button - Changed to Link */}
       <div className="text-center">
-        <a
+        <Link
           href="/projects"
           className="inline-flex items-center gap-2 px-6 py-3 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white rounded-lg transition-all duration-300 font-medium"
         >
           View All Projects →
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -1,7 +1,4 @@
-/*
-	Installed from https://reactbits.dev/ts/default/
-*/
-
+import Image from 'next/image';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import './ProfileCard.css';
 
@@ -345,29 +342,23 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           <div className="pc-shine" />
           <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
-            <img
+            <Image
               className="avatar"
               src={avatarUrl}
               alt={`${name || 'User'} avatar`}
-              loading="lazy"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-              }}
+              width={300}
+              height={300}
+              priority
             />
             {showUserInfo && (
               <div className="pc-user-info">
                 <div className="pc-user-details">
                   <div className="pc-mini-avatar">
-                    <img
+                    <Image
                       src={miniAvatarUrl || avatarUrl}
                       alt={`${name || 'User'} mini avatar`}
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.opacity = '0.5';
-                        target.src = avatarUrl;
-                      }}
+                      width={40}
+                      height={40}
                     />
                   </div>
                   <div className="pc-user-text">

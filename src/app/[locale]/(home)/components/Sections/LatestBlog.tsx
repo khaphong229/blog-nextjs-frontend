@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const blogPosts = [
@@ -45,17 +46,17 @@ export default function LatestBlog() {
           {' '}
           <span className="color-primary-text">Blog Posts</span>
         </h2>
-        <a
+        <Link
           href="/blog"
           className="text-[14px] text-blue-400 hover:text-blue-300 transition-colors duration-300 flex items-center gap-2"
         >
           View all posts
           {' '}
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-right-icon lucide-move-right">
             <path d="M18 8L22 12L18 16" />
             <path d="M2 12H22" />
           </svg>
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -92,17 +93,17 @@ export default function LatestBlog() {
                 {post.description}
               </p>
 
-              <a
+              <Link
                 href={`/blog/${post.id}`}
                 className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300 text-sm font-medium"
               >
                 Read more
                 {' '}
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-move-right-icon lucide-move-right">
                   <path d="M18 8L22 12L18 16" />
                   <path d="M2 12H22" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </article>
         ))}

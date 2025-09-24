@@ -68,6 +68,12 @@ export default antfu(
       'node/prefer-global/process': 'off', // Allow using `process.env`
       'test/padding-around-all': 'error', // Add padding in test files
       'test/prefer-lowercase-title': 'off', // Allow using uppercase titles in test titles
+
+      'eslint no-console': 'off',
+      '@stylistic/no-tabs': 'off',
+      'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
+      'react-refresh/only-export-components': 'off',
+      'react/no-array-index-key': 'off',
     },
   },
 );

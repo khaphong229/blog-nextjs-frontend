@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/ts/default/
-*/
-
 import type { ReactNode } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

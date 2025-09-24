@@ -13,7 +13,10 @@ export default function ModeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const handleMount = () => {
+      setMounted(true);
+    };
+    handleMount();
   }, []);
 
   if (!mounted) {

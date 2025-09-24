@@ -9,9 +9,13 @@ export const useUserDevice = () => {
   const handleWindowResize = () =>
     isMounted.current && setWindowWidth(window.innerWidth);
 
+  const initializeWidth = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
   useEffect(() => {
     isMounted.current = true;
-    setWindowWidth(window.innerWidth);
+    initializeWidth();
     window.addEventListener('resize', handleWindowResize);
 
     return () => {

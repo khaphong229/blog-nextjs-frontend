@@ -31,10 +31,17 @@ const buildKeyframes = (
 
   const keyframes: Record<string, Array<string | number>> = {};
   keys.forEach((k) => {
-    keyframes[k] = [from[k], ...steps.map(s => s[k])];
+    // Use fallback for undefined values
+    keyframes[k] = [
+      from[k] ?? '', // fallback to empty string
+      ...steps.map(s => s[k] ?? ''),
+    ];
   });
   return keyframes;
 };
+
+// Move default easing function outside component
+const defaultEasing = (t: number) => t;
 
 const BlurText: React.FC<BlurTextProps> = ({
   text = '',
@@ -46,7 +53,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   rootMargin = '0px',
   animationFrom,
   animationTo,
-  easing = t => t,
+  easing = defaultEasing,
   onAnimationComplete,
   stepDuration = 0.35,
 }) => {
@@ -59,8 +66,9 @@ const BlurText: React.FC<BlurTextProps> = ({
       return;
     }
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
           setInView(true);
           observer.unobserve(ref.current as Element);
         }
@@ -113,7 +121,7 @@ const BlurText: React.FC<BlurTextProps> = ({
 
         return (
           <motion.span
-            key={index}
+            key={`${segment}-${index}`}
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}
             transition={spanTransition}

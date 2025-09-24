@@ -43,6 +43,7 @@ const GradientButton = ({ ref, className, variant, asChild = false, ...props }: 
     />
   );
 };
+
 GradientButton.displayName = 'GradientButton';
 
 export { GradientButton, gradientButtonVariants };

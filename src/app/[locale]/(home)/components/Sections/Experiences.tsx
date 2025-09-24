@@ -58,7 +58,7 @@ export default function Experiences() {
         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent"></div>
 
         <div className="space-y-12">
-          {experiences.map((exp, index) => (
+          {experiences.map(exp => (
             <div key={exp.id} className="relative flex items-start group">
               {/* Timeline dot */}
               <div className="absolute left-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-neutral-900 group-hover:bg-purple-500 transition-colors duration-300 z-10"></div>
