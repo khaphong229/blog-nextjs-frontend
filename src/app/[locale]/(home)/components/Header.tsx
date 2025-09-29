@@ -12,31 +12,23 @@ type HeaderItem = {
 };
 
 const navItems: HeaderItem[] = [
-  {
-    title: 'About',
-    href: '#',
-  },
-  {
-    title: 'Stack',
-    href: '#',
-  },
-  {
-    title: 'Blog',
-    href: '#',
-  },
-  {
-    title: 'Experience',
-    href: '#',
-  },
-  {
-    title: 'Projects',
-    href: '#',
-  },
-  {
-    title: 'Awards',
-    href: '#',
-  },
+  { title: 'About', href: '#about' },
+  { title: 'Stack', href: '#stack' },
+  { title: 'Blog', href: '#blog' },
+  { title: 'Experience', href: '#experience' },
+  { title: 'Projects', href: '#projects' },
+  { title: 'Awards', href: '#awards' },
 ];
+
+const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  e.preventDefault();
+  const element = document.getElementById(targetId);
+  if (element) {
+    const yOffset = -100;
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
 
 export default function Header() {
   return (
@@ -51,7 +43,13 @@ export default function Header() {
           <div className="hidden gap-2 lg:inline-flex">
             {navItems.map((item: HeaderItem) => (
               <Button key={item.title} asChild variant="ghost">
-                <Link href={item.href}>{item.title}</Link>
+                <a
+                  href={item.href}
+                  onClick={e => handleNavClick(e, item.href.replace('#', ''))}
+                >
+                  {item.title}
+                </a>
+
               </Button>
             ))}
           </div>
@@ -78,18 +76,24 @@ export default function Header() {
               <nav className="-mx-4 my-6 flex flex-1 flex-col gap-2">
                 {navItems.map((item: HeaderItem) => (
                   <Button key={item.title} asChild className="justify-start text-base" variant="ghost">
-                    <Link href={item.href}>{item.title}</Link>
+                    <a
+                      href={item.href}
+                      onClick={e => handleNavClick(e, item.href.replace('#', ''))}
+                    >
+                      {item.title}
+                    </a>
+
                   </Button>
                 ))}
               </nav>
-              <div className="mt-auto grid gap-2">
-                <Button variant="outline" asChild>
-                  <Link href="#">Log in</Link>
-                </Button>
-                <Button asChild>
-                  <Link href="#">Get Started</Link>
-                </Button>
-              </div>
+              {/* <div className="mt-auto grid gap-2"> */}
+              {/*  <Button variant="outline" asChild> */}
+              {/*    <Link href="#">Log in</Link> */}
+              {/*  </Button> */}
+              {/*  <Button asChild> */}
+              {/*    <Link href="#">Get Started</Link> */}
+              {/*  </Button> */}
+              {/* </div> */}
             </SheetContent>
           </Sheet>
         </nav>

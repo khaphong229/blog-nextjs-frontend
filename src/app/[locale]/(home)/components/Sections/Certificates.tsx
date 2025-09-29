@@ -84,7 +84,6 @@ export default function Certificates() {
         {/* Awards Section */}
         <div>
           <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
-            <span>🏆</span>
             Awards
           </h3>
           <div className="space-y-6">
@@ -122,7 +121,6 @@ export default function Certificates() {
         {/* Certificates Section */}
         <div>
           <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
-            <span>📜</span>
             Certificates
           </h3>
           <div className="space-y-6">

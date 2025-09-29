@@ -25,13 +25,13 @@ export default function Contact() {
     {
       icon: '📧',
       label: 'Email',
-      value: 'alex@example.com',
+      value: 'khaphong217@gmail.com',
       color: 'text-blue-400',
     },
     {
       icon: '📍',
       label: 'Location',
-      value: 'San Francisco, California',
+      value: 'Ha Noi, Viet Nam',
       color: 'text-green-400',
     },
     {
@@ -46,25 +46,25 @@ export default function Contact() {
     {
       icon: '💼',
       platform: 'LinkedIn',
-      url: '#',
+      url: 'https://www.linkedin.com/in/khaphong229/',
       color: 'text-blue-500 hover:text-blue-400',
     },
     {
       icon: '🐙',
       platform: 'GitHub',
-      url: '#',
+      url: 'https://github.com/khaphong229',
       color: 'text-gray-400 hover:text-white',
     },
     {
       icon: '🐦',
       platform: 'Twitter',
-      url: '#',
+      url: 'https://www.facebook.com/khaphong.nguyen.229',
       color: 'text-blue-400 hover:text-blue-300',
     },
     {
       icon: '🌐',
       platform: 'Website',
-      url: '#',
+      url: 'https://khaphong.io.vn/',
       color: 'text-green-400 hover:text-green-300',
     },
   ];

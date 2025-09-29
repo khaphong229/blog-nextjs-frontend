@@ -1,4 +1,17 @@
-import { CSS3, GitHubLight, HTML5, JavaScript, Jest, NextJs, React, Sass, TailwindCSS, TypeScript } from 'developer-icons';
+import {
+  CSS3,
+  ExpressJsLight,
+  GitHubLight,
+  HTML5,
+  JavaScript,
+  MongoDB,
+  NestJS,
+  NextJs,
+  React,
+  Sass,
+  TailwindCSS,
+  TypeScript,
+} from 'developer-icons';
 
 const techData = [
   {
@@ -56,21 +69,21 @@ const techData = [
     color: 'text-orange-600',
   },
   {
-    name: 'Jest',
+    name: 'NestJS',
     description: 'JavaScript testing framework',
-    icon: <Jest />,
+    icon: <NestJS />,
     color: 'text-red-600',
   },
   {
-    name: 'Responsive Design',
+    name: 'MongoDB',
     description: 'Multi-device compatibility',
-    icon: '📱',
+    icon: <MongoDB />,
     color: 'text-green-500',
   },
   {
-    name: 'Accessibility',
+    name: 'Express.js',
     description: 'WCAG standards implementation',
-    icon: '♿',
+    icon: <ExpressJsLight />,
     color: 'text-blue-700',
   },
 ];

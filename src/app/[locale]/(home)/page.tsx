@@ -4,7 +4,6 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import Footer from '@/app/[locale]/(home)/components/Footer';
 import Header from '@/app/[locale]/(home)/components/Header';
 import AboutMe from '@/app/[locale]/(home)/components/Sections/AboutMe';
-import Certificates from '@/app/[locale]/(home)/components/Sections/Certificates';
 import Contact from '@/app/[locale]/(home)/components/Sections/Contact';
 import Experiences from '@/app/[locale]/(home)/components/Sections/Experiences';
 import Introduce from '@/app/[locale]/(home)/components/Sections/Introduce';
@@ -46,24 +45,36 @@ export default function Page() {
         <div ref={introduceRef}>
           <Introduce />
         </div>
-        <AboutMe />
+        <div id="about">
+          <AboutMe />
+        </div>
       </main>
 
       <div className="bg-[#1f2937] w-full border-y-2 border-neutral-400/20">
-        <TechStack />
+        <div id="stack">
+          <TechStack />
+        </div>
       </div>
 
-      <LatestBlog />
+      <div id="blog">
+        <LatestBlog />
+      </div>
 
       <div className="bg-[#1f2937] w-full border-y-2 border-neutral-400/20">
-        <Experiences />
+        <div id="experience">
+          <Experiences />
+        </div>
       </div>
 
-      <Projects />
-
-      <div className="bg-[#1f2937] w-full border-y-2 border-neutral-400/20">
-        <Certificates />
+      <div id="projects">
+        <Projects />
       </div>
+
+      {/* <div className="bg-[#1f2937] w-full border-y-2 border-neutral-400/20"> */}
+      {/* <div id="awards"> */}
+      {/* <Certificates /> */}
+      {/* </div> */}
+      {/* </div> */}
 
       <Contact />
 

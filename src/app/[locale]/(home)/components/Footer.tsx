@@ -10,25 +10,25 @@ export default function Footer() {
               <Link href="/" className="flex items-center gap-2">
                 <span className="text-[21px] font-bold color-primary-text">khaphong.io.vn</span>
               </Link>
-              <p className="text-muted-foreground mt-6 text-sm/6">
-                Blookie helps you build beautiful websites faster with ready-to-use components and templates.
-              </p>
+              {/* <p className="text-muted-foreground mt-6 text-sm/6"> */}
+              {/*  Blookie helps you build beautiful websites faster with ready-to-use components and templates. */}
+              {/* </p> */}
             </div>
           </div>
           <div>
             <h3 className="text-base font-semibold tracking-tight">Pages</h3>
             <div className="mt-6 flex flex-col items-start gap-4">
               <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                Home
+                About
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                Services
+                Blog
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
                 Projects
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                News
+                Experiences
               </Link>
             </div>
           </div>
@@ -53,20 +53,17 @@ export default function Footer() {
             <h3 className="text-base font-semibold tracking-tight">Contact</h3>
             <div className="mt-6 flex flex-col items-start gap-4">
               <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                hello@blookie.io
+                khaphong.ptit@gmail.com
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                + 46 526 220 0459
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors">
-                + 46 526 220 0459
+                + 84 393 628 525
               </Link>
             </div>
           </div>
         </div>
         <hr className="mt-12 mb-6" />
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <p className="text-muted-foreground text-sm">© 2025 Blookie, Inc. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">© 2025 KhaPhong, Inc. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="#">
               <span className="sr-only">Facebook</span>

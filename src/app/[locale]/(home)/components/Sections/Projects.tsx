@@ -1,49 +1,52 @@
 import Link from 'next/link';
 import React from 'react';
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  demoUrl: string;
+  githubUrl: string;
+  gradient: string;
+  featured: boolean;
+  appStoreUrl?: string;
+  googlePlayUrl?: string;
+};
+
+const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Dashboard',
-    description: 'A comprehensive dashboard for e-commerce businesses with real-time analytics, inventory management, and order processing.',
+    title: 'Blog Portfolio',
+    description: 'A modern personal blog and portfolio built with Next.js, Tailwind CSS, and TypeScript. Features responsive design, animated UI, and sections for introduction, about, and project showcase. Optimized for performance and accessibility.',
     image: '/api/placeholder/500/300',
-    tags: ['React', 'TypeScript', 'Tailwind CSS'],
-    demoUrl: '#',
-    githubUrl: '#',
+    tags: ['NextJS', 'TypeScript', 'Tailwind CSS'],
+    demoUrl: 'https://khaphong.io.vn/',
+    githubUrl: 'https://github.com/khaphong229/blog-nextjs-frontend',
     gradient: 'from-blue-600 to-purple-700',
     featured: true,
   },
   {
     id: 2,
-    title: 'Nucleus UI Library',
-    description: 'An open-source component library with 50+ accessible and customizable UI components for React applications.',
+    title: 'Refslink',
+    description: 'Front-end of Website Refslink - Shortlink Management To Earn Money Online',
     image: '/api/placeholder/500/300',
-    tags: ['React', 'Storybook', 'Styled Components'],
-    demoUrl: '#',
-    githubUrl: '#',
+    tags: ['ReactJS', 'Ant Design', 'TypeScript'],
+    demoUrl: 'https://refslink.onrender.com/',
+    githubUrl: 'https://github.com/khaphong229/Refslink-front-end-base-umi',
     gradient: 'from-teal-500 to-cyan-600',
     featured: true,
   },
   {
     id: 3,
-    title: 'FitTrack Mobile App',
-    description: 'A fitness tracking mobile application with workout plans, progress tracking, and social features for fitness enthusiasts.',
+    title: 'Trao Do Cu',
+    description: 'Web interface for the old-item exchange platform, built with ReactJS, supporting posting, searching, and account items.',
     image: '/api/placeholder/500/300',
-    tags: ['React Native', 'Redux', 'Firebase'],
-    appStoreUrl: '#',
-    googlePlayUrl: '#',
+    tags: ['ReactJS', 'Redux', 'Ant Design'],
+    demoUrl: 'https://traodocu.khaphong.io.vn/',
+    githubUrl: 'https://github.com/khaphong229/trao-do-cu-front-end',
     gradient: 'from-orange-500 to-red-600',
-    featured: true,
-  },
-  {
-    id: 4,
-    title: 'DevNotes Blog Platform',
-    description: 'A modern blogging platform for developers with markdown support, code highlighting, and a clean reading experience.',
-    image: '/api/placeholder/500/300',
-    tags: ['Next.js', 'GraphQL', 'Vercel'],
-    demoUrl: '#',
-    githubUrl: '#',
-    gradient: 'from-violet-600 to-purple-600',
     featured: true,
   },
 ];
@@ -103,7 +106,6 @@ export default function Projects() {
                     href={project.demoUrl}
                     className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-300"
                   >
-                    <span>🔗</span>
                     Live Demo
                   </a>
                 )}
